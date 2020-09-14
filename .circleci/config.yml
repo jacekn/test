@@ -16,7 +16,8 @@ commands:
 
 jobs:
   job_1:
-    #working_directory: /go/src/github.com/stellar/go
+    environment:
+      CIRCLE_REPOSITORY_URL: https://github.com/jacekn/test.git
     docker:
       - image: circleci/golang:1.14-stretch
     steps:
