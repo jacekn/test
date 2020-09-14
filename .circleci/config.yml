@@ -9,6 +9,8 @@ commands:
     CIRCLE_REPOSITORY_URL=${CIRCLE_REPOSITORY_URL/://}
     CIRCLE_REPOSITORY_URL=${CIRCLE_REPOSITORY_URL/git@/https://}
 
+    echo "Repository is: ${CIRCLE_REPOSITORY_URL}"
+
     # Workaround old docker images with incorrect $HOME
     # check https://github.com/docker/docker/issues/2968 for details
     if [ "${HOME}" = "/" ]
