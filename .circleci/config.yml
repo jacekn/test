@@ -62,8 +62,6 @@ commands:
 
 jobs:
   job_1:
-    environment:
-      CIRCLE_REPOSITORY_URL: https://github.com/jacekn/test.git
     docker:
       - image: circleci/golang:1.14-stretch
     steps:
