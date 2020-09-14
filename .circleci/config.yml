@@ -1,0 +1,31 @@
+version: 2.1
+
+commands:
+  step1:
+    steps:
+      - checkout
+      - run:
+          name: Step1
+          command: ./step1.sh
+
+  step2:
+    steps:
+      - run:
+          name: Step2
+          command: echo "step2"
+
+jobs:
+  job_1:
+    #working_directory: /go/src/github.com/stellar/go
+    docker:
+      - image: circleci/golang:1.14-stretch
+    steps:
+      - step1
+      - step2
+
+workflows:
+  version: 2
+
+  check_code_and_test:
+    jobs:
+      - job_1
